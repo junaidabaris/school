@@ -56,7 +56,7 @@ function App() {
           element={<AdminPage  />}
         >
           <Route path="" element={<DasboardPage/>}></Route>
-          ddsads
+          
           </Route>
     </Routes>
     </>
