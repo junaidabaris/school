@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Aside() {
     const [allAside, setAllAside] = useState({
         admin: false,
-        language: false,
+        inventory: false,
         career: false,
 
     });
@@ -57,62 +57,70 @@ function Aside() {
                         <ul className="menu-sub">
                             <li className="menu-item">
                                 <a href="index.html" className="menu-link">
-                                    <div data-i18n="Analytics">Analytics</div>
+                                    <div data-i18n="Analytics">All Branches</div>
                                 </a>
                             </li>
                             <li className="menu-item">
                                 <a href="dashboards-crm.html" className="menu-link">
-                                    <div data-i18n="CRM">CRM</div>
+                                    <div data-i18n="CRM">Icon School & College</div>
                                 </a>
                             </li>
                             <li className="menu-item">
                                 <a href="app-ecommerce-dashboard.html" className="menu-link">
-                                    <div data-i18n="eCommerce">eCommerce</div>
+                                    <div data-i18n="eCommerce">Oxford International</div>
                                 </a>
                             </li>
-                            <li className="menu-item">
-                                <a href="app-logistics-dashboard.html" className="menu-link">
-                                    <div data-i18n="Logistics">Logistics</div>
-                                </a>
-                            </li>
-                            <li className="menu-item">
-                                <a href="app-academy-dashboard.html" className="menu-link">
-                                    <div data-i18n="Academy">Academy</div>
-                                </a>
-                            </li>
+
                         </ul>
                     </li>
-                    {/* Layouts */}
 
-
-                    {/* Extended components */}
-
-                    {/* Tables */}
-                    <li className="menu-item">
-                        <a href="tables-basic.html" className="menu-link">
+                    <li className={`menu-item ${allAside.inventory ? "open" : ""}`}>
+                        <Link to="#" className="menu-link menu-toggle" onClick={() => {
+                            changeOpen(!allAside.inventory, "inventory");
+                        }}>
                             <i className="menu-icon tf-icons ti ti-table" />
-                            <div data-i18n="Tables">Tables</div>
-                        </a>
-                    </li>
-                    <li className="menu-item">
-                        <a href="javascript:void(0);" className="menu-link menu-toggle">
-                            <i className="menu-icon tf-icons ti ti-layout-grid" />
-                            <div data-i18n="Datatables">Datatables</div>
-                        </a>
+                            <div data-i18n="Tables">Inventory</div>
+                        </Link >
                         <ul className="menu-sub">
                             <li className="menu-item">
-                                <a href="tables-datatables-basic.html" className="menu-link">
-                                    <div data-i18n="Basic">Basic</div>
-                                </a>
+                                <Link to="product" className="menu-link">
+                                    <div data-i18n="Basic">Product</div>
+                                </Link>
+                            </li>
+                            <li className="menu-item">
+                                <Link to="category" className="menu-link">
+                                    <div data-i18n="Basic">Category</div>
+                                </Link>
+
                             </li>
                             <li className="menu-item">
                                 <a href="tables-datatables-advanced.html" className="menu-link">
-                                    <div data-i18n="Advanced">Advanced</div>
+                                    <div data-i18n="Advanced">Store</div>
                                 </a>
                             </li>
                             <li className="menu-item">
                                 <a href="tables-datatables-extensions.html" className="menu-link">
-                                    <div data-i18n="Extensions">Extensions</div>
+                                    <div data-i18n="Extensions">Supplier</div>
+                                </a>
+                            </li>
+                            <li className="menu-item">
+                                <a href="tables-datatables-extensions.html" className="menu-link">
+                                    <div data-i18n="Extensions">Unit</div>
+                                </a>
+                            </li>
+                            <li className="menu-item">
+                                <a href="tables-datatables-extensions.html" className="menu-link">
+                                    <div data-i18n="Extensions">Purchase</div>
+                                </a>
+                            </li>
+                            <li className="menu-item">
+                                <a href="tables-datatables-extensions.html" className="menu-link">
+                                    <div data-i18n="Extensions">Sales</div>
+                                </a>
+                            </li>
+                            <li className="menu-item">
+                                <a href="tables-datatables-extensions.html" className="menu-link">
+                                    <div data-i18n="Extensions">Issue</div>
                                 </a>
                             </li>
                         </ul>

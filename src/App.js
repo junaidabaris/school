@@ -12,8 +12,6 @@ import './assets/css/rtl/theme-semi-dark.css'
 import './assets/css/rtl/theme-semi-dark-dark.css'
 import './assets/css/theme-raspberry.css'
 
-
-
 import './assets/css/pages/advanced-wizard.css'
 import './assets/css/pages/app-academy.css'
 import './assets/css/pages/app-academy-details.css'
@@ -22,7 +20,6 @@ import './assets/css/pages/app-chat.css'
 import './assets/css/pages/app-ecommerce.css'
 import './assets/css/pages/app-email.css'
 import './assets/css/pages/app-invoice.css'
-// import './assets/css/pages/app-invoice-print.css'
 import './assets/css/pages/app-logistics-dashboard.css'
 import './assets/css/pages/app-logistics-fleet.css'
 import '../src/assets/fonts/tabler-icons.css'
@@ -47,18 +44,26 @@ import './assets/css/pages/wizard-ex-checkout.css'
 import { Route, Routes } from 'react-router-dom'
 import AdminPage from './page/admin';
 import DasboardPage from './page/dasboardPage';
+import ProductList from './page/product';
+import AddProduct from './componets/product/AddNewProduct.js';
+import CategoryList from './page/category/index.js';
+import AddNewCategory from './page/addNewCategory/index.js';
 function App() {
   return (
     <>
-    <Routes> 
+      <Routes>
         <Route
           path="/admin"
-          element={<AdminPage  />}
+          element={<AdminPage />}
         >
-          <Route path="" element={<DasboardPage/>}></Route>
-          
-          </Route>
-    </Routes>
+          <Route path="" element={<DasboardPage />}></Route>
+          <Route path="product" element={<ProductList />}></Route>
+          <Route path="addProduct" element={<AddProduct />}></Route>
+          <Route path="category" element={<CategoryList />}></Route>
+          <Route path="addCategory" element={<AddNewCategory />}></Route>
+
+        </Route>
+      </Routes>
     </>
   );
 }

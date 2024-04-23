@@ -3,8 +3,11 @@ import avatar2 from '../../../assets/images/avatars/2.png'
 import avatar9 from '../../../assets/images/avatars/9.png'
 import avatar5 from '../../../assets/images/avatars/5.png'
 import avatar6 from '../../../assets/images/avatars/6.png'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 function Nav() {
+    const [show, setShow] = useState(false)
     return (
         <>
             <nav className="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme" id="layout-navbar">
@@ -347,13 +350,13 @@ function Nav() {
                         </li>
                         {/*/ Notification */}
                         {/* User */}
-                        <li className="nav-item navbar-dropdown dropdown-user dropdown">
-                            <a className="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                                <div className="avatar avatar-online">
+                        <li className="nav-item navbar-dropdown dropdown-user dropdown" onClick={()=>{setShow(!show)}} >
+                            <Link className={`nav-link dropdown-toggle hide-arrow ${show ? "show" : ""}`}  to="#" data-bs-toggle="dropdown">
+                                <div className="avatar avatar-online" >
                                     <img src={avatar1} alt className="h-auto rounded-circle" />
                                 </div>
-                            </a>
-                            <ul className="dropdown-menu dropdown-menu-end">
+                            </Link>
+                            <ul className={`dropdown-menu dropdown-menu-end ${show ? "show" : ""}`}>
                                 <li>
                                     <a className="dropdown-item" href="pages-account-settings-account.html">
                                         <div className="d-flex">
