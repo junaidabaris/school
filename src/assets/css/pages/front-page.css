@@ -55,7 +55,7 @@ nav.layout-navbar {
   height: auto !important;
   z-index: 999 !important;
 }
-nav.layout-navbar::after {
+/* nav.layout-navbar::after {
   content: "";
   position: absolute;
   display: block;
@@ -63,7 +63,7 @@ nav.layout-navbar::after {
   width: 100%;
   top: 0;
   left: 0;
-}
+} */
 nav.layout-navbar.navbar-active::after {
   backdrop-filter: saturate(100%) blur(6px);
   -webkit-backdrop-filter: saturate(100%) blur(6px);

@@ -3,8 +3,48 @@ import avatar2 from '../../../assets/images/avatars/2.png'
 import avatar9 from '../../../assets/images/avatars/9.png'
 import avatar5 from '../../../assets/images/avatars/5.png'
 import avatar6 from '../../../assets/images/avatars/6.png'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 function Nav() {
+    const [show, setShow] = useState(false)
+    const [notification, setNofication] = useState(false)
+    const [theme, setTheme] = useState(false)
+    const [language, setlanguage] = useState(false)
+    const changeShows = (str) => {
+        if (str == 'show') {
+            setShow(!show)
+            setTheme(false)
+            setlanguage(false)
+            setNofication(false)
+        }
+        if (str == 'language') {
+            setShow(!show)
+            setTheme(false)
+            setlanguage(false)
+            setNofication(false)
+        }
+        if (str == 'notification') {
+            setNofication(!notification)
+            setShow(false)
+            setlanguage(false)
+            setTheme(false)
+        }
+        if (str == 'theme') {
+            setTheme(!theme)
+            setlanguage(false)
+            setNofication(false)
+            setShow(false)
+            
+        }
+        if (str == 'language') {
+            setlanguage(!language)
+            setTheme(false)
+            setNofication(false)
+            setShow(false)
+            
+        }
+    }
     return (
         <>
             <nav className="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme" id="layout-navbar">
@@ -26,11 +66,11 @@ function Nav() {
                     {/* /Search */}
                     <ul className="navbar-nav flex-row align-items-center ms-auto">
                         {/* Language */}
-                        <li className="nav-item dropdown-language dropdown me-2 me-xl-0">
+                        <li className="nav-item dropdown-language dropdown me-2 me-xl-0" onClick={() => { changeShows('language') }}>
                             <a className="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                                 <i className="ti ti-language rounded-circle ti-md" />
                             </a>
-                            <ul className="dropdown-menu dropdown-menu-end">
+                            <ul className={`dropdown-menu dropdown-menu-end ${language ? 'show' : ''}`}>
                                 <li>
                                     <a className="dropdown-item active" href="javascript:void(0);" data-language="en" data-text-direction="ltr">
                                         <span className="align-middle">English</span>
@@ -55,11 +95,11 @@ function Nav() {
                         </li>
                         {/*/ Language */}
                         {/* Style Switcher */}
-                        <li className="nav-item dropdown-style-switcher dropdown me-2 me-xl-0">
+                        <li className="nav-item dropdown-style-switcher dropdown me-2 me-xl-0" onClick={() => { changeShows('theme') }} >
                             <a className="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                                 <i className="ti ti-md ti-sun" />
                             </a>
-                            <ul className="dropdown-menu dropdown-menu-end dropdown-styles">
+                            <ul className={`dropdown-menu dropdown-menu-end dropdown-styles ${theme ? 'show' : ''}`}>
                                 <li>
                                     <a className="dropdown-item" href="javascript:void(0);" data-theme="light">
                                         <span className="align-middle"><i className="ti ti-sun me-2" />Light</span>
@@ -79,7 +119,7 @@ function Nav() {
                         </li>
                         {/* / Style Switcher*/}
                         {/* Quick links  */}
-                        <li className="nav-item dropdown-shortcuts navbar-dropdown dropdown me-2 me-xl-0">
+                        {/* <li className="nav-item dropdown-shortcuts navbar-dropdown dropdown me-2 me-xl-0" onClick={() => { changeShows('shortcuts') }} >
                             <a className="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
                                 <i className="ti ti-layout-grid-add ti-md" />
                             </a>
@@ -157,15 +197,15 @@ function Nav() {
                                     </div>
                                     <div className="ps__rail-x" style={{ left: 0, bottom: 0 }}><div className="ps__thumb-x" tabIndex={0} style={{ left: 0, width: 0 }} /></div><div className="ps__rail-y" style={{ top: 0, right: 0 }}><div className="ps__thumb-y" tabIndex={0} style={{ top: 0, height: 0 }} /></div></div>
                             </div>
-                        </li>
+                        </li> */}
                         {/* Quick links */}
                         {/* Notification */}
-                        <li className="nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-1">
+                        <li className="nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-1" onClick={() => { changeShows('notification') }}>
                             <a className="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
                                 <i className="ti ti-bell ti-md" />
                                 <span className="badge bg-danger rounded-pill badge-notifications">5</span>
                             </a>
-                            <ul className="dropdown-menu dropdown-menu-end py-0">
+                            <ul className={`dropdown-menu dropdown-menu-end py-0 ${notification ? "show" : ""}`}>
                                 <li className="dropdown-menu-header border-bottom">
                                     <div className="dropdown-header d-flex align-items-center py-3">
                                         <h5 className="text-body mb-0 me-auto">Notification</h5>
@@ -347,13 +387,13 @@ function Nav() {
                         </li>
                         {/*/ Notification */}
                         {/* User */}
-                        <li className="nav-item navbar-dropdown dropdown-user dropdown">
-                            <a className="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                                <div className="avatar avatar-online">
+                        <li className="nav-item navbar-dropdown dropdown-user dropdown" onClick={() => { changeShows('show') }} >
+                            <Link className={`nav-link dropdown-toggle hide-arrow ${show ? "show" : ""}`} to="#" data-bs-toggle="dropdown">
+                                <div className="avatar avatar-online" >
                                     <img src={avatar1} alt className="h-auto rounded-circle" />
                                 </div>
-                            </a>
-                            <ul className="dropdown-menu dropdown-menu-end">
+                            </Link>
+                            <ul className={`dropdown-menu dropdown-menu-end ${show ? "show" : ""}`}>
                                 <li>
                                     <a className="dropdown-item" href="pages-account-settings-account.html">
                                         <div className="d-flex">

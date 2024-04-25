@@ -3805,6 +3805,7 @@ textarea.form-control-lg {
   color: var(--bs-body-color);
   word-wrap: break-word;
   background-color: var(--bs-card-bg);
+  color: #000;
   background-clip: border-box;
   border: var(--bs-card-border-width) solid var(--bs-card-border-color);
   border-radius: var(--bs-card-border-radius);
@@ -26135,7 +26136,7 @@ a.bg-vimeo:hover, a.bg-vimeo:focus {
 
 
 
-@charset "UTF-8";
+/* @charset "UTF-8"; */
 /*!
  * Bootstrap  v5.3.2 (https://getbootstrap.com/)
  * Copyright 2011-2023 The Bootstrap Authors
