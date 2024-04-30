@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 
 function Aside() {
@@ -8,6 +8,7 @@ function Aside() {
         inventory: false,
         career: false,
         setting: false,
+        Reception: false,
 
     });
 
@@ -37,7 +38,7 @@ function Aside() {
                             </svg>
                             
                         </span> */}
-                        <img width={202} src="https://www.abarissoftech.com/assets/img/logo-2.png"/>
+                        <img width={202} src="https://www.abarissoftech.com/assets/img/logo-2.png" />
                         {/* <span className="app-brand-text demo menu-text fw-bold">Vuexy</span> */}
                     </a>
                     <a href="javascript:void(0);" className="layout-menu-toggle menu-link text-large ms-auto">
@@ -85,30 +86,30 @@ function Aside() {
                         </Link >
                         <ul className="menu-sub">
                             <li className="menu-item">
-                                <Link to="product" className="menu-link">
+                                <NavLink to="product" className="menu-link">
                                     <div data-i18n="Basic">Product</div>
-                                </Link>
+                                </NavLink>
                             </li>
                             <li className="menu-item">
-                                <Link to="category" className="menu-link">
+                                <NavLink to="category" className="menu-link">
                                     <div data-i18n="Basic">Category</div>
-                                </Link>
+                                </NavLink>
 
                             </li>
                             <li className="menu-item">
-                                <Link to="store" className="menu-link">
+                                <NavLink to="store" className="menu-link">
                                     <div data-i18n="Basic">Store</div>
-                                </Link>
+                                </NavLink>
                             </li>
                             <li className="menu-item">
-                                <Link to="supplier" className="menu-link">
+                                <NavLink to="supplier" className="menu-link">
                                     <div data-i18n="Basic">Supplier</div>
-                                </Link>
+                                </NavLink>
                             </li>
                             <li className="menu-item">
-                                <Link to="units" className="menu-link">
+                                <NavLink to="units" className="menu-link">
                                     <div data-i18n="Basic">Unit</div>
-                                </Link>
+                                </NavLink>
                             </li>
                             <li className="menu-item">
                                 <a href="tables-datatables-extensions.html" className="menu-link">
@@ -126,7 +127,38 @@ function Aside() {
                                 </a>
                             </li>
                         </ul>
-                    </li>  <li className={`menu-item ${allAside.setting ? "open" : ""}`}>
+                    </li>
+
+                    <li className={`menu-item ${allAside.Reception ? "open" : ""}`}>
+                        <Link to="#" className="menu-link menu-toggle" onClick={() => {
+                            changeOpen(!allAside.Reception, "Reception");
+                        }}>
+                            <i className="menu-icon tf-icons ti ti-table" />
+                            <div data-i18n="Tables">Reception</div>
+                        </Link >
+                        <ul className="menu-sub">
+                            <li className="menu-item">
+                                <NavLink to="addmission_enquiry" className="menu-link">
+                                    <div data-i18n="Basic">Addmission Enquiry</div>
+                                </NavLink>
+                            </li>
+                            <li className="menu-item">
+                                <NavLink to="postal_record" className="menu-link">
+                                    <div data-i18n="Basic">Postal Record</div>
+                                </NavLink>
+
+                            </li>
+                            <li className="menu-item">
+                                <NavLink to="call_log" className="menu-link">
+                                    <div data-i18n="Basic">Call Log</div>
+                                </NavLink>
+
+                            </li>
+                          
+                        </ul>
+                    </li>
+
+                    <li className={`menu-item ${allAside.setting ? "open" : ""}`}>
                         <Link to="#" className="menu-link menu-toggle" onClick={() => {
                             changeOpen(!allAside.setting, "setting");
                         }}>
@@ -135,37 +167,57 @@ function Aside() {
                         </Link >
                         <ul className="menu-sub">
                             <li className="menu-item">
-                                <Link to="globalSetting" className="menu-link">
+                                <NavLink to="globalSetting" className="menu-link">
                                     <div data-i18n="Basic">Global Settings</div>
-                                </Link>
+                                </NavLink>
                             </li>
                             <li className="menu-item">
-                                <Link to="schoolSetting" className="menu-link">
+                                <NavLink to="schoolSetting" className="menu-link">
                                     <div data-i18n="Basic">School Settings</div>
-                                </Link>
+                                </NavLink>
 
                             </li>
                             <li className="menu-item">
-                                <Link to="rolePermission" className="menu-link">
+                                <NavLink to="rolePermission" className="menu-link">
                                     <div data-i18n="Basic">Role Permission</div>
-                                </Link>
+                                </NavLink>
                             </li>
                             <li className="menu-item">
-                                <Link to="session" className="menu-link">
+                                <NavLink to="session" className="menu-link">
                                     <div data-i18n="Basic">Session Settings</div>
-                                </Link>
+                                </NavLink>
                             </li>
                             <li className="menu-item">
-                                <Link to="translation" className="menu-link">
+                                <NavLink to="translation" className="menu-link">
                                     <div data-i18n="Basic">Translation</div>
-                                </Link>
+                                </NavLink>
                             </li>
                             <li className="menu-item">
-                                <Link to="cron_job" className="menu-link">
+                                <NavLink to="cron_job" className="menu-link">
                                     <div data-i18n="Basic">Cron Job</div>
-                                </Link>
+                                </NavLink>
                             </li>
-                           
+                            <li className="menu-item">
+                                <NavLink to="modules" className="menu-link">
+                                    <div data-i18n="Basic">Modules</div>
+                                </NavLink>
+                            </li>
+                            <li className="menu-item">
+                                <NavLink to="systemstudent" className="menu-link">
+                                    <div data-i18n="Basic">Systrm Student Field</div>
+                                </NavLink>
+                            </li>
+                            <li className="menu-item">
+                                <NavLink to="custom_field" className="menu-link">
+                                    <div data-i18n="Basic">Custom Field</div>
+                                </NavLink>
+                            </li>
+                            <li className="menu-item">
+                                <NavLink to="database_backup" className="menu-link">
+                                    <div data-i18n="Basic">Database Backup</div>
+                                </NavLink>
+                            </li>
+
                         </ul>
                     </li>
                     <div className="ps__rail-x" style={{ left: 0, bottom: 0 }}><div className="ps__thumb-x" tabIndex={0} style={{ left: 0, width: 0 }} /></div><div className="ps__rail-y" style={{ top: 0, height: 384, right: 4 }}><div className="ps__thumb-y" tabIndex={0} style={{ top: 0, height: 74 }} /></div></ul>

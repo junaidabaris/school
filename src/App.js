@@ -1,12 +1,14 @@
 import './assets/css/pages/table.module.css'
 import './assets/css/rtl/core.css'
+import './assets/css/rtl/theme-default.css'
+import './assets/css/pages/demo.css'
+import '../src/assets/fonts/tabler-icons.css'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import './assets/css/pages/app-kanban.css'
 // import './assets/css/rtl/core-dark.css'
 // import './assets/css/rtl/theme-bordered.css'
 // import './assets/css/rtl/theme-bordered-dark.css'
-import './assets/css/rtl/theme-default.css'
-import './assets/css/pages/demo.css'
+
 // import './assets/css/rtl/theme-default-dark.css'
 // import './assets/css/rtl/theme-raspberry-dark.css'
 // import './assets/css/rtl/theme-semi-dark.css'
@@ -23,7 +25,7 @@ import './assets/css/pages/demo.css'
 // import './assets/css/pages/app-invoice.css'
 // import './assets/css/pages/app-logistics-dashboard.css'
 // import './assets/css/pages/app-logistics-fleet.css'
-import '../src/assets/fonts/tabler-icons.css'
+
 // import './assets/css/pages/cards-advance.css'
 // import './assets/css/pages/front-page.css'
 // import './assets/css/pages/front-page-help-center.css'
@@ -42,7 +44,7 @@ import '../src/assets/fonts/tabler-icons.css'
 // import './assets/css/pages/ui-carousel.css'
 // import './assets/css/pages/wizard-ex-checkout.css'
 
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import AdminPage from './page/admin';
 import DasboardPage from './page/dasboardPage';
 import ProductList from './page/product';
@@ -62,11 +64,23 @@ import SessionMaster from './page/settings/sessionSetting/index.js';
 import TranslationList from './page/settings/translation/index.js';
 import AddNewTrans from './componets/settings/translation/AddNewTrans.js';
 import Cron_Job from './page/settings/cron_job/index.js';
+import ModulesPage from './page/modules/index.js'
+import SystemStudent from './page/settings/systemstudent/index.js'
+import CustomFiledPage from './page/settings/custom_field/index.js'
+import AddNewCustom from './componets/settings/custom_field/AddNewCustom.js'
+import DatabaseBackupPage from './page/settings/database_backup/index.js'
+import AddDataBase from './componets/settings/database_backup/AddDataBase.js'
+import AddmissionPage from './page/reception/index.js'
+import AddNewQuwry from './componets/Reception/AddNewQuwry.js'
+import AddPostel from './componets/recepAll/postal_record/AddPostel.js'
+import PostelList from './page/recepAll/postal_record/index.js'
+import CallLogsList from './page/recepAll/call_log/index.js'
 
 function App() {
   return (
     <>
       <Routes>
+      <Route path="/" element={<Navigate to="/admin" />} />
         <Route
           path="/admin"
           element={<AdminPage />}
@@ -82,6 +96,17 @@ function App() {
           <Route path="addSupplier" element={<AddNewSupplier />}></Route>
           <Route path="units" element={<UnitMaster />}></Route>
 
+          {/* setting Reception */}
+          <Route path="addmission_enquiry" element={<AddmissionPage />}></Route>
+          <Route path="addEnquiry" element={<AddNewQuwry />}></Route>
+          
+          <Route path="postal_record" element={<PostelList />}></Route>
+          <Route path="postal_recordAdd" element={<AddPostel />}></Route>
+          <Route path="call_log" element={<CallLogsList />}></Route>
+          <Route path="call_logsAdd" element={<CallLogsList />}></Route>
+
+
+          
           {/* setting start */}
           <Route path="globalSetting" element={<GlobalSetting />}></Route>
           <Route path="schoolSetting" element={<SchoolSetting />}></Route>
@@ -91,6 +116,12 @@ function App() {
           <Route path="translation" element={<TranslationList />}></Route>
           <Route path="addTranslation" element={<AddNewTrans />}></Route>
           <Route path="cron_job" element={<Cron_Job />}></Route>
+          <Route path="modules" element={<ModulesPage />}></Route>
+          <Route path="systemstudent" element={<SystemStudent />}></Route>
+          <Route path="custom_field" element={<CustomFiledPage />}></Route>
+          <Route path="addcustomFiled" element={<AddNewCustom />}></Route>
+          <Route path="database_backup" element={<DatabaseBackupPage />}></Route>
+          <Route path="addDataBase" element={<AddDataBase />}></Route>
 
           <Route path="*" element={<h2>NO PAGE FOUND</h2>}></Route>
         </Route>
