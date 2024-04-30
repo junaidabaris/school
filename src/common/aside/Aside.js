@@ -161,6 +161,44 @@ function Aside() {
                             <div data-i18n="Documentation">Documentation</div>
                         </a>
                     </li>
+                    <li className={`menu-item ${allAside.language ? "open" : ""}`}>
+                        <Link to="#" className="menu-link menu-toggle" onClick={() => {
+                            changeOpen(!allAside.language, "language");
+                        }}>
+                            {/* <i className="ti ti-list me-2" /> */}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor" className="bi bi-people-fill me-3" viewBox="0 0 16 16">
+                                <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" />
+                            </svg>
+                            <div data-i18n="Reception">Reception</div>
+                        </Link >
+                        <ul className="menu-sub">
+                            <li className="menu-item">
+                                <Link to='admission' className="menu-link">
+                                    <div data-i18n="Analytics">Admission Enquiry</div>
+                                </Link>
+                            </li>
+                            <li className="menu-item">
+                                <a href="dashboards-crm.html" className="menu-link">
+                                    <div data-i18n="CRM">Call Log</div>
+                                </a>
+                            </li>
+                            <li className="menu-item">
+                                <a href="app-ecommerce-dashboard.html" className="menu-link">
+                                    <div data-i18n="eCommerce">Visitor Log</div>
+                                </a>
+                            </li>
+                            <li className="menu-item">
+                                <a href="app-logistics-dashboard.html" className="menu-link">
+                                    <div data-i18n="Logistics">Complaint</div>
+                                </a>
+                            </li>
+                            <li className="menu-item">
+                                <a href="app-academy-dashboard.html" className="menu-link">
+                                    <div data-i18n="Academy">Config Reception</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     <div className="ps__rail-x" style={{ left: 0, bottom: 0 }}><div className="ps__thumb-x" tabIndex={0} style={{ left: 0, width: 0 }} /></div><div className="ps__rail-y" style={{ top: 0, height: 384, right: 4 }}><div className="ps__thumb-y" tabIndex={0} style={{ top: 0, height: 74 }} /></div></ul>
             </aside>
 

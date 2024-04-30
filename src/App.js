@@ -47,18 +47,16 @@ import './assets/css/pages/wizard-ex-checkout.css'
 import { Route, Routes } from 'react-router-dom'
 import AdminPage from './page/admin';
 import DasboardPage from './page/dasboardPage';
+import { AdmissionPage } from './page/admission';
 function App() {
   return (
     <>
-    <Routes> 
-        <Route
-          path="/admin"
-          element={<AdminPage  />}
-        >
-          <Route path="" element={<DasboardPage/>}></Route>
-          
-          </Route>
-    </Routes>
+      <Routes>
+        <Route  path="/admin" element={<AdminPage />}>
+          <Route path="" element={<DasboardPage />}></Route>
+          <Route path='admission' element={<AdmissionPage />} />
+        </Route>
+      </Routes>
     </>
   );
 }
