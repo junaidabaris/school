@@ -25,7 +25,9 @@
     width: 35px;
     height: 24px;
   }
-  
+  #custom-switch{
+    width: 30px;
+  }
   .app-brand-text.demo {
     font-size: 1.375rem;
   }
@@ -922,4 +924,11 @@ html:not([dir=rtl]) div.card-datatable table.dataTable tbody td:first-child {
 
 div.dataTables_wrapper div.dataTables_paginate ul.pagination .page-item.disabled .page-link {
   background-color: rgba(134, 146, 208, 0.08);
+}
+
+
+.layout-wrapper:not(.layout-horizontal) .bg-menu-theme .menu-inner .active {
+  background: linear-gradient(72.47deg, #7367f0 22.16%, rgba(115, 103, 240, 0.7) 76.47%);
+  box-shadow: 0px 2px 6px 0px rgba(115, 103, 240, 0.48) !important;
+  color: #fff !important;
 }
