@@ -9,6 +9,7 @@ function Aside() {
         career: false,
         setting: false,
         Reception: false,
+        exam: false
 
     });
 
@@ -154,7 +155,7 @@ function Aside() {
                                 </NavLink>
 
                             </li>
-                          
+
                         </ul>
                     </li>
 
@@ -220,40 +221,39 @@ function Aside() {
 
                         </ul>
                     </li>
-                    <li className={`menu-item ${allAside.language ? "open" : ""}`}>
+                    <li className={`menu-item ${allAside.exam ? "open" : ""}`}>
                         <Link to="#" className="menu-link menu-toggle" onClick={() => {
-                            changeOpen(!allAside.language, "language");
+                            changeOpen(!allAside.exam, "exam");
                         }}>
-                            {/* <i className="ti ti-list me-2" /> */}
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" fill="currentColor" className="bi bi-people-fill me-3" viewBox="0 0 16 16">
-                                <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" />
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-laptop me-2" viewBox="0 0 16 16">
+                                <path d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5" />
                             </svg>
-                            <div data-i18n="Reception">Reception</div>
+                            <div data-i18n="OnlineExam">Online Exam</div>
                         </Link >
                         <ul className="menu-sub">
                             <li className="menu-item">
-                                <Link to='admission' className="menu-link">
-                                    <div data-i18n="Analytics">Admission Enquiry</div>
-                                </Link>
+                                <NavLink to='onlineExam' className="menu-link">
+                                    <div data-i18n="Analytics">Online Exam</div>
+                                </NavLink>
                             </li>
                             <li className="menu-item">
                                 <a href="dashboards-crm.html" className="menu-link">
-                                    <div data-i18n="CRM">Call Log</div>
+                                    <div data-i18n="CRM">Question Bank</div>
                                 </a>
                             </li>
                             <li className="menu-item">
                                 <a href="app-ecommerce-dashboard.html" className="menu-link">
-                                    <div data-i18n="eCommerce">Visitor Log</div>
+                                    <div data-i18n="eCommerce">Question Group</div>
                                 </a>
                             </li>
                             <li className="menu-item">
                                 <a href="app-logistics-dashboard.html" className="menu-link">
-                                    <div data-i18n="Logistics">Complaint</div>
+                                    <div data-i18n="Logistics">Position Generate</div>
                                 </a>
                             </li>
                             <li className="menu-item">
                                 <a href="app-academy-dashboard.html" className="menu-link">
-                                    <div data-i18n="Academy">Config Reception</div>
+                                    <div data-i18n="Academy">Exam Result</div>
                                 </a>
                             </li>
                         </ul>

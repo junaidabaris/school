@@ -47,7 +47,7 @@ import '../src/assets/fonts/tabler-icons.css'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import AdminPage from './page/admin';
 import DasboardPage from './page/dasboardPage';
-import { AdmissionPage } from './page/admission';
+import { AdmissionPage, OnlineExam } from './page/onlineExam/index.js';
 import ProductList from './page/product';
 import AddProduct from './componets/product/AddNewProduct.js';
 import CategoryList from './page/category/index.js';
@@ -87,7 +87,7 @@ function App() {
           element={<AdminPage />}
         >
            <Route path="" element={<DasboardPage />}></Route>
-          <Route path='admission' element={<AdmissionPage />} />
+          <Route path="onlineExam" element={<OnlineExam />} />
           <Route path="" element={<DasboardPage />}></Route>
           <Route path="product" element={<ProductList />}></Route>
           <Route path="addProduct" element={<AddProduct />}></Route>
