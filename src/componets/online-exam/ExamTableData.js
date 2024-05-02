@@ -122,6 +122,7 @@ export const ExamTableData = () => {
             saveAsExcelFile(excelBuffer, 'products');
         });
     };
+    
 
 
     console.log('global filter', globalFilterValue)
