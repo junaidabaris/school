@@ -76,6 +76,7 @@ import AddNewQuwry from './componets/Reception/AddNewQuwry.js'
 import AddPostel from './componets/recepAll/postal_record/AddPostel.js'
 import PostelList from './page/recepAll/postal_record/index.js'
 import CallLogsList from './page/recepAll/call_log/index.js'
+import { QuestionBank } from './page/onlineExam/questionBank/index.js'
 
 function App() {
   return (
@@ -87,7 +88,6 @@ function App() {
           element={<AdminPage />}
         >
            <Route path="" element={<DasboardPage />}></Route>
-          <Route path="onlineExam" element={<OnlineExam />} />
           <Route path="" element={<DasboardPage />}></Route>
           <Route path="product" element={<ProductList />}></Route>
           <Route path="addProduct" element={<AddProduct />}></Route>
@@ -98,6 +98,10 @@ function App() {
           <Route path="supplier" element={<SupplierLists />}></Route>
           <Route path="addSupplier" element={<AddNewSupplier />}></Route>
           <Route path="units" element={<UnitMaster />}></Route>
+
+           {/* online exam */}
+          <Route path="onlineExam" element={<OnlineExam />} />
+          <Route path="questionBank" element={<QuestionBank />} />
 
           {/* setting Reception */}
           <Route path="addmission_enquiry" element={<AddmissionPage />}></Route>

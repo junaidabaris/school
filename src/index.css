@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.p-datatable-tbody {
+  font-size: 14px !important;
+}
+.p-datatable-thead{
+  font-size: 13px;
+}
