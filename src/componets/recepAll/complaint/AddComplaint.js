@@ -1,16 +1,16 @@
 import { ErrorMessage, Field, Form, Formik } from "formik"
 import * as yup from 'yup'
-function AddPostel() {
+
+function AddComplaint() {
     const defalutValue = {
         Type: '',
         branchs: '',
-        ReferenceNo: '',
-        SenderTitle: '',
-        Address: '',
-        Note: '',
+        AssignTo: '',
+        ComplainantName: '',
+        ComplainantMobileNo: '',
         Date: '',
+        Note: '',
         DocumentFile: '',
-        ReceiverTitle: '',
 
     }
 
@@ -18,13 +18,12 @@ function AddPostel() {
         // fieldLbale: yup.string().required('SS').min(10).max(10),
         Type: yup.string().required('Type is Requird!'),
         branchs: yup.string().required('branch is Requird!'),
-        ReferenceNo: yup.number().required('Reference No is Requird!'),
-        SenderTitle: yup.string().required('Sender Title is Requird!'),
-        ReceiverTitle: yup.string().required('Receiver Title  is Requird!'),
-        Address: yup.string().required('Address is Requird!'),
+        AssignTo: yup.string().required('Assign To is Requird!'),
+        ComplainantName: yup.string().required('Complainant Name is Requird!'),
+        ComplainantMobileNo: yup.string().required('Complainant Mobile No is Requird!'),
         Note: yup.string().required('Note is Requird!'),
-        Date: yup.string().required('Date  is Requird!'),
-        DocumentFile: yup.string().required('Document File  is Requird!'),
+        Date: yup.string().required('Date is Requird!'),
+        DocumentFile: yup.string().required('Document File is Requird!'),
 
 
     })
@@ -41,7 +40,7 @@ function AddPostel() {
                     {/* Add Product */}
                     <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-3">
                         <div className="d-flex flex-column justify-content-center">
-                            <h4 className="mb-1 mt-3">Add a Postel Record</h4>
+                            <h4 className="mb-1 mt-3">Add a Complaint</h4>
                         </div>
 
                     </div>
@@ -51,7 +50,7 @@ function AddPostel() {
                             {/* Product Information */}
                             <div className="card mb-4">
 
-                                <Formik id="frmrecahrge" initialValues={defalutValue} validationSchema={validationSceema} onSubmit={handleSubmit} className="CustomForm fl-form ng-pristine ng-valid row">
+                            <Formik id="frmrecahrge" initialValues={defalutValue} validationSchema={validationSceema} onSubmit={handleSubmit} className="CustomForm fl-form ng-pristine ng-valid row">
                                     {({ errors, touched, resetForm }) => {
                                         return <Form className="row">
                                             <div className="card-body">
@@ -96,89 +95,62 @@ function AddPostel() {
 
                                                     </div>
                                                     <div className="col-6">
-                                                        <label
-                                                            className="form-label"
-                                                            htmlFor="ecommerce-product-barcode"
-                                                        >
-                                                            Reference No
+                                                        <label className="form-label" htmlFor="ecommerce-product-sku">
+                                                        Assign To
                                                         </label>
-                                                        <Field type='number' name='ReferenceNo' placeholder='Enter Reference No'
-                                                            className={
-                                                                `form-control
-                                                    ${errors.ReferenceNo && touched.ReferenceNo ? ' is-invalid' : ''}`
-                                                            }
-                                                        />
-                                                        <p style={{ color: 'red' }}> <ErrorMessage name="ReferenceNo" /></p>
-                                                    </div>
-                                                    <div className="col-6">
-                                                        <label
-                                                            className="form-label"
-                                                            htmlFor="ecommerce-product-barcode"
-                                                        >
-                                                            Sender Title
-                                                        </label>
-                                                        <Field type='text' name='SenderTitle' placeholder='Enter Sender Title  '
-                                                            className={
-                                                                `form-control
-                                                    ${errors.SenderTitle && touched.SenderTitle ? ' is-invalid' : ''}`
-                                                            }
-                                                        />
-                                                        <p style={{ color: 'red' }}> <ErrorMessage name="SenderTitle" /></p>
-                                                    </div>
-                                                    <div className="col-6">
-                                                        <label
-                                                            className="form-label"
-                                                            htmlFor="ecommerce-product-barcode"
-                                                        >
-                                                            Receiver Title
-                                                        </label>
-                                                        <Field type='text' name='ReceiverTitle' placeholder='Enter Receiver Title '
-                                                            className={
-                                                                `form-control
-                                                    ${errors.ReceiverTitle && touched.ReceiverTitle ? ' is-invalid' : ''}`
-                                                            }
-                                                        />
-                                                        <p style={{ color: 'red' }}> <ErrorMessage name="ReceiverTitle" /></p>
-                                                    </div>
 
-                                                    <div className="col-6">
-                                                        <label
-                                                            className="form-label"
-                                                            htmlFor="ecommerce-product-barcode"
-                                                        >
-                                                            Address
-                                                        </label>
-                                                        <Field type='text' name='Address' placeholder='Enter Address'
-                                                            className={
-                                                                `form-control
-                                                    ${errors.Address && touched.Address ? ' is-invalid' : ''}`
-                                                            }
-                                                        />
-                                                        <p style={{ color: 'red' }}> <ErrorMessage name="Address" /></p>
+                                                        <Field component='select' name='AssignTo' className={
+                                                            `form-control
+                                                    ${errors.AssignTo && touched.AssignTo ? ' is-invalid' : ''}`
+                                                        }>
+                                                            <option >--Select--</option>
+                                                            <option value={71}>Airtel Prepaid</option>
+                                                            <option value={82}>BSNL Prepaid</option>
+                                                            <option value={83}>Vi Prepaid</option>
+                                                            <option value={94}>JIO</option>
+                                                        </Field>
+
+                                                        <p style={{ color: 'red' }}> <ErrorMessage name="AssignTo" /></p>
+
                                                     </div>
                                                     <div className="col-6">
                                                         <label
                                                             className="form-label"
                                                             htmlFor="ecommerce-product-barcode"
                                                         >
-                                                            Note
+                                                            Complainant Name
                                                         </label>
-                                                        <Field type='text' name='Note' placeholder='Enter Note'
+                                                        <Field type='text' name='ComplainantName' placeholder='Enter Complainant Name '
                                                             className={
                                                                 `form-control
-                                                    ${errors.Note && touched.Note ? ' is-invalid' : ''}`
+                                                    ${errors.ComplainantName && touched.ComplainantName ? ' is-invalid' : ''}`
                                                             }
                                                         />
-                                                        <p style={{ color: 'red' }}> <ErrorMessage name="Note" /></p>
+                                                        <p style={{ color: 'red' }}> <ErrorMessage name="ComplainantName" /></p>
                                                     </div>
                                                     <div className="col-6">
                                                         <label
                                                             className="form-label"
                                                             htmlFor="ecommerce-product-barcode"
                                                         >
-                                                            Date
+                                                            Complainant Mobile No
                                                         </label>
-                                                        <Field type='date' name='Date' placeholder='Enter Date'
+                                                        <Field type='text' name='ComplainantMobileNo' placeholder='Enter Complainant Mobile No '
+                                                            className={
+                                                                `form-control
+                                                    ${errors.ComplainantMobileNo && touched.ComplainantMobileNo ? ' is-invalid' : ''}`
+                                                            }
+                                                        />
+                                                        <p style={{ color: 'red' }}> <ErrorMessage name="ComplainantMobileNo" /></p>
+                                                    </div>
+                                                    <div className="col-6">
+                                                        <label
+                                                            className="form-label"
+                                                            htmlFor="ecommerce-product-barcode"
+                                                        >
+                                                           Date
+                                                        </label>
+                                                        <Field type='date' name='Date' placeholder='Enter Complainant Mobile No '
                                                             className={
                                                                 `form-control
                                                     ${errors.Date && touched.Date ? ' is-invalid' : ''}`
@@ -191,9 +163,11 @@ function AddPostel() {
                                                             className="form-label"
                                                             htmlFor="ecommerce-product-barcode"
                                                         >
-                                                            Document File
+                                                          Document File
+
                                                         </label>
-                                                        <Field type='file' name='DocumentFile' placeholder='Enter DocumentFile'
+                                                        <Field type='file' name='DocumentFile'
+                                                        placeholder='Enter DocumentFile '
                                                             className={
                                                                 `form-control
                                                     ${errors.DocumentFile && touched.DocumentFile ? ' is-invalid' : ''}`
@@ -201,6 +175,23 @@ function AddPostel() {
                                                         />
                                                         <p style={{ color: 'red' }}> <ErrorMessage name="DocumentFile" /></p>
                                                     </div>
+                                                    <div className="col-12">
+                                                        <label
+                                                            className="form-label"
+                                                            htmlFor="ecommerce-product-barcode"
+                                                        >
+                                                          Note
+                                                        </label>
+                                                        <Field type='text' name='Note'
+                                                        as="textarea" placeholder='Enter Note '
+                                                            className={
+                                                                `form-control
+                                                    ${errors.Note && touched.Note ? ' is-invalid' : ''}`
+                                                            }
+                                                        />
+                                                        <p style={{ color: 'red' }}> <ErrorMessage name="Note" /></p>
+                                                    </div>
+                                                   
 
                                                 </div>
                                                 <button type="submit" className="btn btn-primary">
@@ -227,4 +218,4 @@ function AddPostel() {
 
     </div>
 }
-export default AddPostel
+export default AddComplaint

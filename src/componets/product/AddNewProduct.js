@@ -1,5 +1,39 @@
-import Form from 'react-bootstrap/Form';
+// import Form from 'react-bootstrap/Form';
+import { ErrorMessage, Field, Form, Formik } from "formik"
+import * as yup from 'yup'
+
 function AddNewProduct() {
+    const defalutValue = {
+        ProductName: '',
+        branchs: '',
+        Productcode: '',
+        ProductCategory: '',
+        PurchaseUnit: '',
+        SalesUnit: '',
+        UnitRatio: '',
+        PurchasePrice: '',
+        SalesPrice: '',
+        Remarks: '',
+    }
+
+    const validationSceema = yup.object().shape({
+        // fieldLbale: yup.string().required('SS').min(10).max(10),
+        ProductName: yup.string().required('Product Name is Requird!'),
+        branchs: yup.string().required('branch is Requird!'),
+        Productcode: yup.string().required('Product code is Requird!'),
+        ProductCategory: yup.string().required('Product Category is Requird!'),
+        PurchaseUnit: yup.string().required('Purchase Unit is Requird!'),
+        SalesUnit: yup.string().required('Sales Unit  is Requird!'),
+        UnitRatio: yup.string().required('Unit Ratio  is Requird!'),
+        PurchasePrice: yup.string().required('Purchase Price  is Requird!'),
+        SalesPrice: yup.string().required('Sales Price  is Requird!'),
+        Remarks: yup.string().required('Remarks is Requird!'),
+
+    })
+    const handleSubmit = (value) => {
+        console.log(value);
+
+    }
     return <div>
         <div className="content-wrapper">
             {/* Content */}
@@ -30,163 +64,224 @@ function AddNewProduct() {
                                 <div className="card-header">
                                     <h5 className="card-tile mb-0">Product information</h5>
                                 </div>
-                                <div className="card-body">
 
-                                    <div className="row mb-3">
-                                        <div className="col-6">
-                                            <label className="form-label" htmlFor="ecommerce-product-sku">
-                                                Branch
-                                            </label>
-                                            <Form.Select aria-label="Default select example">
-                                                <option>Open this select</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                            </Form.Select>
-                                        </div>
-                                        <div className="col-6">
-                                            <label
-                                                className="form-label"
-                                                htmlFor="ecommerce-product-barcode"
-                                            >
-                                                Product Name
-                                            </label>
-                                            <input
-                                                type="text"
-                                                className="form-control"
-                                                id="ecommerce-product-barcode"
 
-                                                name="productBarcode"
-                                                aria-label="Product barcode"
-                                            />
-                                        </div>
-                                        <div className="col-6">
-                                            <label
-                                                className="form-label"
-                                                htmlFor="ecommerce-product-barcode"
-                                            >
-                                                Product Code
-                                            </label>
-                                            <input
-                                                type="text"
-                                                className="form-control"
-                                                id="ecommerce-product-barcode"
 
-                                                name="productBarcode"
-                                                aria-label="Product barcode"
-                                            />
-                                        </div>
-                                        <div className="col-6">
-                                            <label
-                                                className="form-label"
-                                                htmlFor="ecommerce-product-barcode"
-                                            >
-                                                Product Category
-                                            </label>
-                                            <Form.Select aria-label="Default select example">
-                                                <option>First select the branch</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                            </Form.Select>
-                                        </div>
-                                        <div className="col-6">
-                                            <label
-                                                className="form-label"
-                                                htmlFor="ecommerce-product-barcode"
-                                            >
-                                                Purchase Unit
-                                            </label>
-                                            <Form.Select aria-label="Default select example">
-                                                <option>First select the branch</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                            </Form.Select>
-                                        </div>
-                                        <div className="col-6">
-                                            <label
-                                                className="form-label"
-                                                htmlFor="ecommerce-product-barcode"
-                                            >
-                                                Sales Unit
-                                            </label>
-                                            <Form.Select aria-label="Default select example">
-                                                <option>First select the branch</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                            </Form.Select>
-                                        </div>
-                                        <div className="col-6">
-                                            <label
-                                                className="form-label"
-                                                htmlFor="ecommerce-product-barcode"
-                                            >
-                                                Unit Ratio
-                                            </label>
-                                            <input
-                                                type="text"
-                                                className="form-control"
-                                                id="ecommerce-product-barcode"
 
-                                                name="productBarcode"
-                                                aria-label="Product barcode"
-                                            />
-                                        </div>
-                                        <div className="col-6">
-                                            <label
-                                                className="form-label"
-                                                htmlFor="ecommerce-product-barcode"
-                                            >
-                                                Purchase Price
-                                            </label>
-                                            <input
-                                                type="text"
-                                                className="form-control"
-                                                id="ecommerce-product-barcode"
+                                <div className="card-body row">
+                                    <Formik id="frmrecahrge" initialValues={defalutValue} validationSchema={validationSceema} onSubmit={handleSubmit} className="CustomForm fl-form ng-pristine ng-valid row">
+                                        {({ errors, touched, resetForm }) => {
+                                          return  <Form className="row">
 
-                                                name="productBarcode"
-                                                aria-label="Product barcode"
-                                            />
-                                        </div>
-                                        <div className="col-6">
-                                            <label
-                                                className="form-label"
-                                                htmlFor="ecommerce-product-barcode"
-                                            >
-                                                Sales Price
-                                            </label>
-                                            <input
-                                                type="text"
-                                                className="form-control"
-                                                id="ecommerce-product-barcode"
 
-                                                name="productBarcode"
-                                                aria-label="Product barcode"
-                                            />
-                                        </div>
-                                        <div className="col-6">
-                                            <label
-                                                className="form-label"
-                                                htmlFor="ecommerce-product-barcode"
-                                            >
-                                                Remarks
-                                            </label>
-                                            <input
-                                                type="text"
-                                                className="form-control"
-                                                id="ecommerce-product-barcode"
+                                                <div className="col-6">
+                                                    <label className="form-label" htmlFor="ecommerce-product-sku">
+                                                        Branch
+                                                    </label>
 
-                                                name="productBarcode"
-                                                aria-label="Product barcode"
-                                            />
-                                        </div>
-                                    </div>
-                                    <button type="submit" className="btn btn-primary">
-                                        Save
-                                    </button>
+
+                                                    <Field component='select' name='branchs' className={
+                                                        `form-control
+                                                    ${errors.branchs && touched.branchs ? ' is-invalid' : ''}`
+                                                    }>
+                                                        <option value={2}>--Select--</option>
+                                                        <option value={71}>Airtel Prepaid</option>
+                                                        <option value={82}>BSNL Prepaid</option>
+                                                        <option value={83}>Vi Prepaid</option>
+                                                        <option value={94}>JIO</option>
+                                                    </Field>
+
+                                                    <p style={{ color: 'red' }}> <ErrorMessage name="branchs" /></p>
+
+                                                </div>
+                                                <div className="col-6">
+                                                    <label
+                                                        className="form-label"
+                                                        htmlFor="ecommerce-product-barcode"
+                                                    >
+                                                        Product Name
+                                                    </label>
+                                                    <Field type='text' name='ProductName' placeholder='Enter Product Name '
+                                                        className={
+                                                            `form-control
+                                                    ${errors.ProductName && touched.ProductName ? ' is-invalid' : ''}`
+                                                        }
+                                                    />
+                                                    <p style={{ color: 'red' }}> <ErrorMessage name="ProductName" /></p>
+
+
+
+                                                </div>
+                                                <div className="col-6">
+                                                    <label
+                                                        className="form-label"
+                                                        htmlFor="ecommerce-product-barcode"
+                                                    >
+                                                        Product Code
+                                                    </label>
+                                                    <Field type='number' name='Productcode' placeholder='Enter Product Code '
+                                                        className={
+                                                            `form-control
+                                                    ${errors.Productcode && touched.Productcode ? ' is-invalid' : ''}`
+                                                        }
+                                                    />
+                                                    <p style={{ color: 'red' }}> <ErrorMessage name="Productcode" /></p>
+                                                </div>
+                                                <div className="col-6">
+                                                    <label
+                                                        className="form-label"
+                                                        htmlFor="ecommerce-product-barcode"
+                                                    >
+                                                        Product Category
+                                                    </label>
+
+
+
+                                                    <Field component='select' name='ProductCategory' className={
+                                                        `form-control
+                                                    ${errors.ProductCategory && touched.ProductCategory ? ' is-invalid' : ''}`
+                                                    }>
+                                                        <option value={2}>--Select--</option>
+                                                        <option value={71}>Airtel Prepaid</option>
+                                                        <option value={82}>BSNL Prepaid</option>
+                                                        <option value={83}>Vi Prepaid</option>
+                                                        <option value={94}>JIO</option>
+                                                    </Field>
+
+                                                    <p style={{ color: 'red' }}> <ErrorMessage name="ProductCategory" /></p>
+
+
+
+                                                </div>
+                                                <div className="col-6">
+                                                    <label
+                                                        className="form-label"
+                                                        htmlFor="ecommerce-product-barcode"
+                                                    >
+                                                        Purchase Unit
+                                                    </label>
+
+
+
+                                                    <Field component='select' name='PurchaseUnit' className={
+                                                        `form-control
+                                                    ${errors.PurchaseUnit && touched.PurchaseUnit ? ' is-invalid' : ''}`
+                                                    }>
+                                                        <option value={2}>--Select--</option>
+                                                        <option value={71}>Airtel Prepaid</option>
+                                                        <option value={82}>BSNL Prepaid</option>
+                                                        <option value={83}>Vi Prepaid</option>
+                                                        <option value={94}>JIO</option>
+                                                    </Field>
+
+                                                    <p style={{ color: 'red' }}> <ErrorMessage name="PurchaseUnit" /></p>
+
+
+
+
+                                                </div>
+                                                <div className="col-6">
+                                                    <label
+                                                        className="form-label"
+                                                        htmlFor="ecommerce-product-barcode"
+                                                    >
+                                                        Sales Unit
+                                                    </label>
+
+
+                                                    <Field component='select' name='SalesUnit' className={
+                                                        `form-control
+                                                    ${errors.SalesUnit && touched.SalesUnit ? ' is-invalid' : ''}`
+                                                    }>
+                                                        <option value={2}>--Select--</option>
+                                                        <option value={71}>Airtel Prepaid</option>
+                                                        <option value={82}>BSNL Prepaid</option>
+                                                        <option value={83}>Vi Prepaid</option>
+                                                        <option value={94}>JIO</option>
+                                                    </Field>
+
+                                                    <p style={{ color: 'red' }}> <ErrorMessage name="SalesUnit" /></p>
+
+
+
+
+                                                </div>
+                                                <div className="col-6">
+                                                    <label
+                                                        className="form-label"
+                                                        htmlFor="ecommerce-product-barcode"
+                                                    >
+                                                        Unit Ratio
+                                                    </label>
+                                                    <Field type='number' name='UnitRatio' placeholder='Enter Mobile number'
+                                                        className={
+                                                            `form-control
+                                                    ${errors.UnitRatio && touched.UnitRatio ? ' is-invalid' : ''}`
+                                                        }
+                                                    />
+                                                    <p style={{ color: 'red' }}> <ErrorMessage name="UnitRatio" /></p>
+                                                </div>
+                                                <div className="col-6">
+                                                    <label
+                                                        className="form-label"
+                                                        htmlFor="ecommerce-product-barcode"
+                                                    >
+                                                        Purchase Price
+                                                    </label>
+                                                    <Field type='number' name='PurchasePrice' placeholder='Enter   Purchase Price'
+                                                        className={
+                                                            `form-control
+                                                    ${errors.PurchasePrice && touched.PurchasePrice ? ' is-invalid' : ''}`
+                                                        }
+                                                    />
+                                                    <p style={{ color: 'red' }}> <ErrorMessage name="PurchasePrice" /></p>
+
+                                                </div>
+                                                <div className="col-6">
+                                                    <label
+                                                        className="form-label"
+                                                        htmlFor="ecommerce-product-barcode"
+                                                    >
+                                                        Sales Price
+                                                    </label>
+                                                    <Field type='number' name='SalesPrice' placeholder='Enter Sale Price'
+                                                        className={
+                                                            `form-control
+                                                    ${errors.SalesPrice && touched.SalesPrice ? ' is-invalid' : ''}`
+                                                        }
+                                                    />
+                                                    <p style={{ color: 'red' }}> <ErrorMessage name="SalesPrice" /></p>
+                                                </div>
+                                                <div className="col-6">
+                                                    <label
+                                                        className="form-label"
+                                                        htmlFor="ecommerce-product-barcode"
+                                                    >
+                                                        Remarks
+                                                    </label>
+                                                    <Field type='text' name='Remarks' placeholder='Enter Remarks'
+                                                        className={
+                                                            `form-control
+                                                    ${errors.Remarks && touched.Remarks ? ' is-invalid' : ''}`
+                                                        }
+                                                    />
+                                                    <p style={{ color: 'red' }}> <ErrorMessage name="Remarks" /></p>
+                                                </div>
+
+                                                <div className="col-6">
+                                                    <button type="submit" className="btn btn-primary" style={{ margin: "20px 0" }}>
+                                                        Save
+                                                    </button>
+                                                    <button type="button" className="btn btn-danger" onClick={resetForm} style={{ margin: "20px 10px" }}>
+                                                        Reset
+                                                    </button>
+                                                </div>
+
+                                            </Form>
+                                        }}
+                                    </Formik>
                                 </div>
+
                             </div>
 
 

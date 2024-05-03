@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/DeleteOutlined';
 
-function ListCallLogs() {
+function ListVisitorLogs() {
     return <div>
         <div className="container-xxl flex-grow-1 container-p-y">
 
@@ -65,11 +65,11 @@ function ListCallLogs() {
                                         </div>{" "}
                                         <Link
                                             className="btn btn-secondary add-new btn-primary waves-effect waves-light"
-                                            to={'/admin/call_logsAdd'}
+                                            to={'/admin/visitor_logsAdd'}
                                         >
                                             <span>
                                                 <i className="ti ti-plus me-0 me-sm-1 ti-xs" />
-                                                <span className="d-none d-sm-inline-block">Add New Call Log</span>
+                                                <span className="d-none d-sm-inline-block">Add New Visitor Log</span>
                                             </span>
                                         </Link>
                                     </div>
@@ -87,86 +87,37 @@ function ListCallLogs() {
                                     <th>#</th>
                                     <th>Branch	</th>
                                     <th>Name</th>
-                                    <th>Mobile no	</th>
-                                    <th>Calling Purpose	</th>
-                                    <th>Call Type		</th>
+                                    <th>Visiting Purpose	</th>
                                     <th>Date		</th>
-                                    <th>Start Time		</th>
-                                    <th>End Time		</th>
-                                    <th>Follow Up		</th>
-                                    <th>Duaration		</th>
+                                    <th>Entry Time		</th>
+                                    <th>Exit Time		</th>
+                                    <th>Number Of Visitors		</th>
+                                    <th>Token/Pass		</th>
                                     <th>Note		</th>
                                     <th>  Action</th>
 
                                 </tr>
                             </thead>
                             <tbody>
-                             
+
                                 <tr>
                                     <td>1</td>
                                     <td>Icon School & College		</td>
-                                    <td>Ray	</td>
-                                    <td>0235476666		</td>
-                                    <td>Dispatch	</td>
-                                    <td>Electricity Office		</td>
-                                    <td>02.Feb.2024	 	</td>
-                                    <td>09:24 AM	 	</td>
-                                    <td>10:00 AM	 	</td>
-                                    <td>05.Feb.2024	 	</td>
-                                    <td>00:36:00	 	</td>
-                                    <td>Yes 	</td>
+                                    <td>	Name : Shahzad
+                                        Mobile No : 03014381660
+                                        Id Number : 3530219666935	</td>
+                                    <td>Sports		</td>
+                                    <td>27.Feb.2024		</td>
+                                    <td>07:31 PM		</td>
+                                    <td>07:31 PM	 	</td>
+                                    <td>2 	</td>
+                                    <td>21475 	</td>
+                                    <td>--	 	</td>
                                     <td> <EditIcon />
                                         <DeleteIcon /></td>
                                 </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Icon School & College		</td>
-                                    <td>Ray	</td>
-                                    <td>0235476666		</td>
-                                    <td>Dispatch	</td>
-                                    <td>Electricity Office		</td>
-                                    <td>02.Feb.2024	 	</td>
-                                    <td>09:24 AM	 	</td>
-                                    <td>10:00 AM	 	</td>
-                                    <td>05.Feb.2024	 	</td>
-                                    <td>00:36:00	 	</td>
-                                    <td>Yes 	</td>
-                                    <td> <EditIcon />
-                                        <DeleteIcon /></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Icon School & College		</td>
-                                    <td>Ray	</td>
-                                    <td>0235476666		</td>
-                                    <td>Dispatch	</td>
-                                    <td>Electricity Office		</td>
-                                    <td>02.Feb.2024	 	</td>
-                                    <td>09:24 AM	 	</td>
-                                    <td>10:00 AM	 	</td>
-                                    <td>05.Feb.2024	 	</td>
-                                    <td>00:36:00	 	</td>
-                                    <td>Yes 	</td>
-                                    <td> <EditIcon />
-                                        <DeleteIcon /></td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Icon School & College		</td>
-                                    <td>Ray	</td>
-                                    <td>0235476666		</td>
-                                    <td>Dispatch	</td>
-                                    <td>Electricity Office		</td>
-                                    <td>02.Feb.2024	 	</td>
-                                    <td>09:24 AM	 	</td>
-                                    <td>10:00 AM	 	</td>
-                                    <td>05.Feb.2024	 	</td>
-                                    <td>00:36:00	 	</td>
-                                    <td>Yes 	</td>
-                                    <td> <EditIcon />
-                                        <DeleteIcon /></td>
-                                </tr>
-                               
+
+
                             </tbody>
                         </table>
                         <div className="row mx-2">
@@ -244,4 +195,4 @@ function ListCallLogs() {
 
     </div>
 }
-export default ListCallLogs
+export default ListVisitorLogs
