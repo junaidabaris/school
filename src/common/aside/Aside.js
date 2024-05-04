@@ -242,9 +242,9 @@ function Aside() {
                                 </NavLink>
                             </li>
                             <li className="menu-item">
-                                <a href="app-ecommerce-dashboard.html" className="menu-link">
+                                <NavLink to="questionGroup" className="menu-link">
                                     <div data-i18n="eCommerce">Question Group</div>
-                                </a>
+                                </NavLink>
                             </li>
                             <li className="menu-item">
                                 <a href="app-logistics-dashboard.html" className="menu-link">

@@ -19,3 +19,12 @@ code {
 .p-datatable-thead{
   font-size: 13px;
 }
+.p-sr-only{
+  display: contents;
+}
+.p-inputtext.p-invalid.p-component{
+  display: block;
+}
+.p-dropdown-label {
+  font-size: 13px;
+}
