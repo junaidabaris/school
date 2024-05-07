@@ -72,7 +72,7 @@ export const ModulesList = () => {
                                                 </span>
                                             </span>
                                         </label>
-                                        	</td>
+                                    </td>
 
                                 </tr>
                          

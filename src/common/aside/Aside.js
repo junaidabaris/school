@@ -247,14 +247,14 @@ function Aside() {
                                 </NavLink>
                             </li>
                             <li className="menu-item">
-                                <a href="app-logistics-dashboard.html" className="menu-link">
+                                <NavLink to="positionGenerate" className="menu-link">
                                     <div data-i18n="Logistics">Position Generate</div>
-                                </a>
+                                </NavLink>
                             </li>
                             <li className="menu-item">
-                                <a href="app-academy-dashboard.html" className="menu-link">
+                                <NavLink to="examResult" className="menu-link">
                                     <div data-i18n="Academy">Exam Result</div>
-                                </a>
+                                </NavLink>
                             </li>
                         </ul>
                     </li>

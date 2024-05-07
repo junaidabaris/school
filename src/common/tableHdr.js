@@ -42,7 +42,7 @@ export const RenderHeader = ({globalFilterValue, onGlobalFilterChange, exportExc
                     >
                         <span>
                             <i className="ti ti-plus me-0 me-sm-1 ti-xs" />
-                            <span className="d-none d-sm-inline-block" >Add New Enquiry</span>
+                            <span className="d-none d-sm-inline-block" >Add Online Exam</span>
                         </span>
                     </Link>
                 </div>

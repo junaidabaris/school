@@ -78,6 +78,8 @@ import PostelList from './page/recepAll/postal_record/index.js'
 import CallLogsList from './page/recepAll/call_log/index.js'
 import { QuestionBank } from './page/onlineExam/questionBank/index.js'
 import { QuestionGroup } from './page/onlineExam/questionGroup/index.js'
+import { PositionGenerate } from './page/onlineExam/positionGenerate/index.js'
+import { ExamResult } from './page/onlineExam/examResult/index.js'
 
 function App() {
   return (
@@ -104,6 +106,8 @@ function App() {
           <Route path="onlineExam" element={<OnlineExam />} />
           <Route path="questionBank" element={<QuestionBank />} />
           <Route path="questionGroup" element={<QuestionGroup />} />
+          <Route path="positionGenerate" element={<PositionGenerate />} />
+          <Route path="examResult" element={<ExamResult />} />
 
           {/* setting Reception */}
           <Route path="addmission_enquiry" element={<AddmissionPage />}></Route>
