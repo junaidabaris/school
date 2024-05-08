@@ -47,6 +47,7 @@ import '../src/assets/fonts/tabler-icons.css'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import AdminPage from './page/admin';
 import DasboardPage from './page/dasboardPage';
+import { AdmissionPage, OnlineExam } from './page/onlineExam/index.js';
 import ProductList from './page/product';
 import AddProduct from './componets/product/AddNewProduct.js';
 import CategoryList from './page/category/index.js';
@@ -75,6 +76,10 @@ import AddNewQuwry from './componets/Reception/AddNewQuwry.js'
 import AddPostel from './componets/recepAll/postal_record/AddPostel.js'
 import PostelList from './page/recepAll/postal_record/index.js'
 import CallLogsList from './page/recepAll/call_log/index.js'
+import { QuestionBank } from './page/onlineExam/questionBank/index.js'
+import { QuestionGroup } from './page/onlineExam/questionGroup/index.js'
+import { PositionGenerate } from './page/onlineExam/positionGenerate/index.js'
+import { ExamResult } from './page/onlineExam/examResult/index.js'
 import AddCallLog from './componets/recepAll/call_log/AddCallLos.js'
 import VisitorLogsList from './page/recepAll/visitor_log/index.js'
 import AddVisitorLos from './componets/recepAll/visitor_log/AddVisitorLos.js'
@@ -91,6 +96,7 @@ function App() {
           path="/admin"
           element={<AdminPage />}
         >
+           <Route path="" element={<DasboardPage />}></Route>
           <Route path="" element={<DasboardPage />}></Route>
           <Route path="product" element={<ProductList />}></Route>
           <Route path="addProduct" element={<AddProduct />}></Route>
@@ -101,6 +107,13 @@ function App() {
           <Route path="supplier" element={<SupplierLists />}></Route>
           <Route path="addSupplier" element={<AddNewSupplier />}></Route>
           <Route path="units" element={<UnitMaster />}></Route>
+
+           {/* online exam */}
+          <Route path="onlineExam" element={<OnlineExam />} />
+          <Route path="questionBank" element={<QuestionBank />} />
+          <Route path="questionGroup" element={<QuestionGroup />} />
+          <Route path="positionGenerate" element={<PositionGenerate />} />
+          <Route path="examResult" element={<ExamResult />} />
 
           {/* setting Reception */}
           <Route path="addmission_enquiry" element={<AddmissionPage />}></Route>

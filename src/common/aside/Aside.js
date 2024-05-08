@@ -9,6 +9,7 @@ function Aside() {
         career: false,
         setting: false,
         Reception: false,
+        exam: false
 
     });
 
@@ -167,7 +168,7 @@ function Aside() {
                                     <div data-i18n="Basic">Config Reception</div>
                                 </NavLink>
                             </li>
-                          
+
                         </ul>
                     </li>
 
@@ -231,6 +232,43 @@ function Aside() {
                                 </NavLink>
                             </li>
 
+                        </ul>
+                    </li>
+                    <li className={`menu-item ${allAside.exam ? "open" : ""}`}>
+                        <Link to="#" className="menu-link menu-toggle" onClick={() => {
+                            changeOpen(!allAside.exam, "exam");
+                        }}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-laptop me-2" viewBox="0 0 16 16">
+                                <path d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5" />
+                            </svg>
+                            <div data-i18n="OnlineExam">Online Exam</div>
+                        </Link >
+                        <ul className="menu-sub">
+                            <li className="menu-item">
+                                <NavLink to='onlineExam' className="menu-link">
+                                    <div data-i18n="Analytics">Online Exam</div>
+                                </NavLink>
+                            </li>
+                            <li className="menu-item">
+                                <NavLink to="questionBank" className="menu-link">
+                                    <div data-i18n="CRM">Question Bank</div>
+                                </NavLink>
+                            </li>
+                            <li className="menu-item">
+                                <NavLink to="questionGroup" className="menu-link">
+                                    <div data-i18n="eCommerce">Question Group</div>
+                                </NavLink>
+                            </li>
+                            <li className="menu-item">
+                                <NavLink to="positionGenerate" className="menu-link">
+                                    <div data-i18n="Logistics">Position Generate</div>
+                                </NavLink>
+                            </li>
+                            <li className="menu-item">
+                                <NavLink to="examResult" className="menu-link">
+                                    <div data-i18n="Academy">Exam Result</div>
+                                </NavLink>
+                            </li>
                         </ul>
                     </li>
                     <div className="ps__rail-x" style={{ left: 0, bottom: 0 }}><div className="ps__thumb-x" tabIndex={0} style={{ left: 0, width: 0 }} /></div><div className="ps__rail-y" style={{ top: 0, height: 384, right: 4 }}><div className="ps__thumb-y" tabIndex={0} style={{ top: 0, height: 74 }} /></div></ul>

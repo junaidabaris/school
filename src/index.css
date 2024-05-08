@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.p-datatable-tbody {
+  font-size: 14px !important;
+}
+.p-datatable-thead{
+  font-size: 13px;
+}
+.p-sr-only{
+  display: contents;
+}
+.p-inputtext.p-invalid.p-component{
+  display: block;
+}
+.p-dropdown-label {
+  font-size: 13px;
+}
