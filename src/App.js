@@ -80,6 +80,12 @@ import { QuestionBank } from './page/onlineExam/questionBank/index.js'
 import { QuestionGroup } from './page/onlineExam/questionGroup/index.js'
 import { PositionGenerate } from './page/onlineExam/positionGenerate/index.js'
 import { ExamResult } from './page/onlineExam/examResult/index.js'
+import AddCallLog from './componets/recepAll/call_log/AddCallLos.js'
+import VisitorLogsList from './page/recepAll/visitor_log/index.js'
+import AddVisitorLos from './componets/recepAll/visitor_log/AddVisitorLos.js'
+import ComplaintList from './page/recepAll/complaint/index.js'
+import AddComplaint from './componets/recepAll/complaint/AddComplaint.js'
+import ConfigReception from './page/recepAll/config_reception/index.js'
 
 function App() {
   return (
@@ -112,11 +118,16 @@ function App() {
           {/* setting Reception */}
           <Route path="addmission_enquiry" element={<AddmissionPage />}></Route>
           <Route path="addEnquiry" element={<AddNewQuwry />}></Route>
-          
+
           <Route path="postal_record" element={<PostelList />}></Route>
           <Route path="postal_recordAdd" element={<AddPostel />}></Route>
           <Route path="call_log" element={<CallLogsList />}></Route>
-          <Route path="call_logsAdd" element={<CallLogsList />}></Route>
+          <Route path="call_logsAdd" element={<AddCallLog />}></Route>
+          <Route path="visitor_log" element={<VisitorLogsList />}></Route>
+          <Route path="visitor_logsAdd" element={<AddVisitorLos />}></Route>
+          <Route path="complaint" element={<ComplaintList/>}></Route>
+          <Route path="ComplaintAdd" element={<AddComplaint/>}></Route>
+          <Route path="config_reception" element={<ConfigReception/>}></Route>
 
 
           

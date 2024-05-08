@@ -112,7 +112,7 @@ function Aside() {
                                     <div data-i18n="Basic">Unit</div>
                                 </NavLink>
                             </li>
-                            <li className="menu-item">
+                            {/* <li className="menu-item">
                                 <a href="tables-datatables-extensions.html" className="menu-link">
                                     <div data-i18n="Extensions">Purchase</div>
                                 </a>
@@ -126,7 +126,7 @@ function Aside() {
                                 <a href="tables-datatables-extensions.html" className="menu-link">
                                     <div data-i18n="Extensions">Issue</div>
                                 </a>
-                            </li>
+                            </li> */}
                         </ul>
                     </li>
 
@@ -134,7 +134,7 @@ function Aside() {
                         <Link to="#" className="menu-link menu-toggle" onClick={() => {
                             changeOpen(!allAside.Reception, "Reception");
                         }}>
-                            <i className="menu-icon tf-icons ti ti-table" />
+                            <i className="menu-icon tf-icons ti ti-users" />
                             <div data-i18n="Tables">Reception</div>
                         </Link >
                         <ul className="menu-sub">
@@ -147,13 +147,26 @@ function Aside() {
                                 <NavLink to="postal_record" className="menu-link">
                                     <div data-i18n="Basic">Postal Record</div>
                                 </NavLink>
-
                             </li>
                             <li className="menu-item">
                                 <NavLink to="call_log" className="menu-link">
                                     <div data-i18n="Basic">Call Log</div>
                                 </NavLink>
-
+                            </li>
+                            <li className="menu-item">
+                                <NavLink to="visitor_log" className="menu-link">
+                                    <div data-i18n="Basic">Visitor Log</div>
+                                </NavLink>
+                            </li>
+                            <li className="menu-item">
+                                <NavLink to="complaint" className="menu-link">
+                                    <div data-i18n="Basic">Complaint</div>
+                                </NavLink>
+                            </li>
+                            <li className="menu-item">
+                                <NavLink to="config_reception" className="menu-link">
+                                    <div data-i18n="Basic">Config Reception</div>
+                                </NavLink>
                             </li>
 
                         </ul>
@@ -163,7 +176,7 @@ function Aside() {
                         <Link to="#" className="menu-link menu-toggle" onClick={() => {
                             changeOpen(!allAside.setting, "setting");
                         }}>
-                            <i className="menu-icon tf-icons ti ti-table" />
+                            <i className="menu-icon tf-icons ti ti-settings" />
                             <div data-i18n="Tables">Setting</div>
                         </Link >
                         <ul className="menu-sub">
