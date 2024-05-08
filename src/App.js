@@ -81,12 +81,13 @@ import AddVisitorLos from './componets/recepAll/visitor_log/AddVisitorLos.js'
 import ComplaintList from './page/recepAll/complaint/index.js'
 import AddComplaint from './componets/recepAll/complaint/AddComplaint.js'
 import ConfigReception from './page/recepAll/config_reception/index.js'
+import { Certificate } from './page/certificate/index.js'
 
 function App() {
   return (
     <>
       <Routes>
-      <Route path="/" element={<Navigate to="/admin" />} />
+        <Route path="/" element={<Navigate to="/admin" />} />
         <Route
           path="/admin"
           element={<AdminPage />}
@@ -112,12 +113,14 @@ function App() {
           <Route path="call_logsAdd" element={<AddCallLog />}></Route>
           <Route path="visitor_log" element={<VisitorLogsList />}></Route>
           <Route path="visitor_logsAdd" element={<AddVisitorLos />}></Route>
-          <Route path="complaint" element={<ComplaintList/>}></Route>
-          <Route path="ComplaintAdd" element={<AddComplaint/>}></Route>
-          <Route path="config_reception" element={<ConfigReception/>}></Route>
+          <Route path="complaint" element={<ComplaintList />}></Route>
+          <Route path="ComplaintAdd" element={<AddComplaint />}></Route>
+          <Route path="config_reception" element={<ConfigReception />}></Route>
+
+          {/* certificate */}
+          <Route path="certificate" element={<Certificate />}></Route>
 
 
-          
           {/* setting start */}
           <Route path="globalSetting" element={<GlobalSetting />}></Route>
           <Route path="schoolSetting" element={<SchoolSetting />}></Route>

@@ -9,6 +9,7 @@ function Aside() {
         career: false,
         setting: false,
         Reception: false,
+        Certificate: false,
 
     });
 
@@ -231,6 +232,21 @@ function Aside() {
                                 </NavLink>
                             </li>
 
+                        </ul>
+                    </li>
+                    <li className={`menu-item ${allAside.Certificate ? "open" : ""}`}>
+                        <Link to="#" className="menu-link menu-toggle" onClick={() => {
+                            changeOpen(!allAside.Certificate, "Certificate");
+                        }}>
+                            <i className="menu-icon tf-icons ti ti-settings" />
+                            <div data-i18n="Tables">Certificate</div>
+                        </Link >
+                        <ul className="menu-sub">
+                            <li className="menu-item">
+                                <NavLink to="certificate" className="menu-link">
+                                    <div data-i18n="Basic"></div>
+                                </NavLink>
+                            </li>
                         </ul>
                     </li>
                     <div className="ps__rail-x" style={{ left: 0, bottom: 0 }}><div className="ps__thumb-x" tabIndex={0} style={{ left: 0, width: 0 }} /></div><div className="ps__rail-y" style={{ top: 0, height: 384, right: 4 }}><div className="ps__thumb-y" tabIndex={0} style={{ top: 0, height: 74 }} /></div></ul>
