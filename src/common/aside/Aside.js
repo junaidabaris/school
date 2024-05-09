@@ -8,7 +8,11 @@ function Aside() {
         inventory: false,
         career: false,
         setting: false,
+        Addmission: false,
         Reception: false,
+        emplooy: false,
+        cardManagment: false,
+        studentDetail: false,
 
     });
 
@@ -111,21 +115,23 @@ function Aside() {
                                     <div data-i18n="Basic">Unit</div>
                                 </NavLink>
                             </li>
-                            {/* <li className="menu-item">
-                                <a href="tables-datatables-extensions.html" className="menu-link">
+                            <li className="menu-item">
+                                <NavLink to="purchase" className="menu-link">
                                     <div data-i18n="Extensions">Purchase</div>
-                                </a>
+                                </NavLink>
                             </li>
+
                             <li className="menu-item">
-                                <a href="tables-datatables-extensions.html" className="menu-link">
+                                <NavLink to="sales" className="menu-link">
                                     <div data-i18n="Extensions">Sales</div>
-                                </a>
+                                </NavLink>
                             </li>
                             <li className="menu-item">
-                                <a href="tables-datatables-extensions.html" className="menu-link">
+                                <NavLink to="issue" className="menu-link">
                                     <div data-i18n="Extensions">Issue</div>
-                                </a>
-                            </li> */}
+                                </NavLink>
+                            </li>
+
                         </ul>
                     </li>
 
@@ -167,7 +173,119 @@ function Aside() {
                                     <div data-i18n="Basic">Config Reception</div>
                                 </NavLink>
                             </li>
-                          
+
+                        </ul>
+                    </li>
+
+
+                    <li className={`menu-item ${allAside.Addmission ? "open" : ""}`}>
+                        <Link to="#" className="menu-link menu-toggle" onClick={() => {
+                            changeOpen(!allAside.Addmission, "Addmission");
+                        }}>
+                            <i className="menu-icon tf-icons ti ti-color-swatch" />
+                            <div data-i18n="Tables">Addmission</div>
+                        </Link >
+                        <ul className="menu-sub">
+                            <li className="menu-item">
+                                <NavLink to="studentAdd" className="menu-link">
+                                    <div data-i18n="Basic">Create Addmission</div>
+                                </NavLink>
+                            </li>
+                            <li className="menu-item">
+                                <NavLink to="onlineAdmission" className="menu-link">
+                                    <div data-i18n="Basic">Online Admission</div>
+                                </NavLink>
+                            </li>
+                            <li className="menu-item">
+                                <NavLink to="multiImport" className="menu-link">
+                                    <div data-i18n="Basic">Multiple Import</div>
+                                </NavLink>
+                            </li>
+                            <li className="menu-item">
+                                <NavLink to="Add_Category" className="menu-link">
+                                    <div data-i18n="Basic">Category</div>
+                                </NavLink>
+                            </li>
+
+
+                        </ul>
+                    </li>
+
+                    <li className={`menu-item ${allAside.emplooy ? "open" : ""}`}>
+                        <Link to="#" className="menu-link menu-toggle" onClick={() => {
+                            changeOpen(!allAside.emplooy, "emplooy");
+                        }}>
+                            <i className="menu-icon tf-icons ti ti-users" />
+                            <div data-i18n="Tables">Employee</div>
+                        </Link >
+                        <ul className="menu-sub">
+                            <li className="menu-item">
+                                <NavLink to="employeeList" className="menu-link">
+                                    <div data-i18n="Basic">Employee List</div>
+                                </NavLink>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <li className={`menu-item ${allAside.studentDetail ? "open" : ""}`}>
+                        <Link to="#" className="menu-link menu-toggle" onClick={() => {
+                            changeOpen(!allAside.studentDetail, "studentDetail");
+                        }}>
+                            <i className="menu-icon tf-icons ti ti-id" />
+                            <div data-i18n="Tables">Student Detail</div>
+                        </Link >
+                        <ul className="menu-sub">
+                            <li className="menu-item">
+                                <NavLink to="studentList" className="menu-link">
+                                    <div data-i18n="Basic">Student List</div>
+                                </NavLink>
+                            </li>
+                            <li className="menu-item">
+                                <NavLink to="loginDeactivate" className="menu-link">
+                                    <div data-i18n="Basic">Login Deactivate</div>
+                                </NavLink>
+                            </li>
+                            <li className="menu-item">
+                                <NavLink to="deactivateReason" className="menu-link">
+                                    <div data-i18n="Basic">Deactivate Reason</div>
+                                </NavLink>
+                            </li>
+
+                        </ul>
+                    </li>
+
+
+
+                    <li className={`menu-item ${allAside.cardManagment ? "open" : ""}`}>
+                        <Link to="#" className="menu-link menu-toggle" onClick={() => {
+                            changeOpen(!allAside.cardManagment, "cardManagment");
+                        }}>
+                            <i className="menu-icon tf-icons ti ti-checkbox" />
+                            <div data-i18n="Tables">Card Management</div>
+                        </Link >
+                        <ul className="menu-sub">
+                            <li className="menu-item">
+                                <NavLink to="cardManagment" className="menu-link">
+                                    <div data-i18n="Basic">Id Card Templete</div>
+                                </NavLink>
+                            </li>
+                            <li className="menu-item">
+                                <NavLink to="studentCard" className="menu-link">
+                                    <div data-i18n="Basic">Student Id Card</div>
+                                </NavLink>
+                            </li>
+                            <li className="menu-item">
+                                <NavLink to="cardTemplate" className="menu-link">
+                                    <div data-i18n="Basic">Admit Card Templete</div>
+                                </NavLink>
+                            </li>
+                            <li className="menu-item">
+                                <NavLink to="cardGenerate" className="menu-link">
+                                    <div data-i18n="Basic">Generate Admit Card</div>
+                                </NavLink>
+                            </li>
+
                         </ul>
                     </li>
 

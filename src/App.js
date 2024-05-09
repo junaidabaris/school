@@ -81,12 +81,32 @@ import AddVisitorLos from './componets/recepAll/visitor_log/AddVisitorLos.js'
 import ComplaintList from './page/recepAll/complaint/index.js'
 import AddComplaint from './componets/recepAll/complaint/AddComplaint.js'
 import ConfigReception from './page/recepAll/config_reception/index.js'
+import PuschaseListPage from './page/purchase/index.js'
+import AddNewPurchase from './componets/purchase/AddNewPurchase.js'
+import SalesListPage from './page/sales/index.js'
+import AddNewSales from './componets/sales/AddNewSales.js'
+import IssueListPage from './page/issue/index.js'
+import AddNewIssue from './componets/issue/AddNewIssue.js'
+import AddmisstionCreate from './page/addmisson/createAdmission/index.js'
+import OnlineAddmisstionCreate from './page/addmisson/onlineAdmission/index.js'
+import MultiImportPage from './page/addmisson/multiImport/index.js'
+import CategoryPage from './page/addmisson/category/index.js'
+import IdCardListPage from './page/cardManagment/index.js'
+import AddNewIdCard from './componets/cardManagment/AddNewIdCard.js'
+import StudentCard from './page/studentCard/index.js'
+import EmployeeListPage from './page/employeeCard/index.js'
+import AdmitCardTemplate from './page/cardTemplate/index.js'
+import AddAdmitCard from './componets/cardTemplate/AddAdmitCard.js'
+import CardGeneratePage from './page/cardGenerate/index.js'
+import StudentListPage from './page/studenetetail/studentList/index.js'
+import DeactivateAccount from './page/studenetetail/loginDeactivate/index.js'
+import ReasonMaster from './page/studenetetail/deactivateReason/index.js'
 
 function App() {
   return (
     <>
       <Routes>
-      <Route path="/" element={<Navigate to="/admin" />} />
+        <Route path="/" element={<Navigate to="/admin" />} />
         <Route
           path="/admin"
           element={<AdminPage />}
@@ -101,6 +121,12 @@ function App() {
           <Route path="supplier" element={<SupplierLists />}></Route>
           <Route path="addSupplier" element={<AddNewSupplier />}></Route>
           <Route path="units" element={<UnitMaster />}></Route>
+          <Route path="purchase" element={<PuschaseListPage />}></Route>
+          <Route path="addPurchase" element={<AddNewPurchase />}></Route>
+          <Route path="sales" element={<SalesListPage />}></Route>
+          <Route path="addsales" element={<AddNewSales />}></Route>
+          <Route path="issue" element={<IssueListPage />}></Route>
+          <Route path="addIssue" element={<AddNewIssue />}></Route>
 
           {/* setting Reception */}
           <Route path="addmission_enquiry" element={<AddmissionPage />}></Route>
@@ -112,12 +138,12 @@ function App() {
           <Route path="call_logsAdd" element={<AddCallLog />}></Route>
           <Route path="visitor_log" element={<VisitorLogsList />}></Route>
           <Route path="visitor_logsAdd" element={<AddVisitorLos />}></Route>
-          <Route path="complaint" element={<ComplaintList/>}></Route>
-          <Route path="ComplaintAdd" element={<AddComplaint/>}></Route>
-          <Route path="config_reception" element={<ConfigReception/>}></Route>
+          <Route path="complaint" element={<ComplaintList />}></Route>
+          <Route path="ComplaintAdd" element={<AddComplaint />}></Route>
+          <Route path="config_reception" element={<ConfigReception />}></Route>
 
 
-          
+
           {/* setting start */}
           <Route path="globalSetting" element={<GlobalSetting />}></Route>
           <Route path="schoolSetting" element={<SchoolSetting />}></Route>
@@ -133,6 +159,26 @@ function App() {
           <Route path="addcustomFiled" element={<AddNewCustom />}></Route>
           <Route path="database_backup" element={<DatabaseBackupPage />}></Route>
           <Route path="addDataBase" element={<AddDataBase />}></Route>
+
+          {/* Admission */}
+          <Route path="studentAdd" element={<AddmisstionCreate />}></Route>
+          <Route path="onlineAdmission" element={<OnlineAddmisstionCreate />}></Route>
+          <Route path="multiImport" element={<MultiImportPage />}></Route>
+          <Route path="Add_Category" element={<CategoryPage />}></Route>
+
+          {/* Card Mangement */}
+          <Route path="cardManagment" element={<IdCardListPage />}></Route>
+          <Route path="idCard" element={<AddNewIdCard />}></Route>
+          <Route path="studentCard" element={<StudentCard />}></Route>
+          <Route path="employeeCard" element={<EmployeeListPage />}></Route>
+          <Route path="cardTemplate" element={<AdmitCardTemplate />}></Route>
+          <Route path="AdmitCardTemplateAdd" element={<AddAdmitCard />}></Route>
+          <Route path="cardGenerate" element={<CardGeneratePage />}></Route>
+
+          {/* student detail */}
+          <Route path="studentList" element={<StudentListPage />}></Route>
+          <Route path="loginDeactivate" element={<DeactivateAccount />}></Route>
+          <Route path="deactivateReason" element={<ReasonMaster />}></Route>
 
           <Route path="*" element={<h2>NO PAGE FOUND</h2>}></Route>
         </Route>
